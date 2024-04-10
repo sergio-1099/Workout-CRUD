@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <head>
+        <title>Update Session</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+              integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+    </head>
+    <body>
+        <div class="container my-5">
+            <h3> Enter Session Details</h3>
+            <div class="card">
+                <div class="card-body">
+                    <div class="col-md-10">
+                        <form action="#" th:action="@{/session/update}" th:object="${session}"
+                              method="post">
+
+                            <table border="0" cellpadding="10">
+                                <tr>
+                                    <td>ID:</td>
+                                    <td><input type="number" th:field="*{id}" value="${session.id}" readonly /></td>
+                                </tr>
+                                <tr>
+                                    <td>Date:</td>
+                                    <td><input type="text" th:field="*{date}" required value="${session.date}"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Session Name:</td>
+                                    <td><input type="text" th:field="*{sessionName}" required value="${session.sessionName}"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Number of Exercises:</td>
+                                    <td><input type="number" th:field="*{numOfExercises}" required value="${session.numOfExercises}"/></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><button type="submit">Save</button> </td>
+                                </tr>
+
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
